@@ -1,0 +1,176 @@
+{% extends "puppy/base.html" %}
+{% load static %}
+
+{% block content %}
+<!-- bradcam_area_start -->
+    <div class="bradcam_area breadcam_bg">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="bradcam_text text-center">
+                        <h3>About Us</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- bradcam_area_end -->
+
+<!-- pet_care_area_start  -->
+<div class="pet_care_area">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-5 col-md-6">
+                    <div class="pet_thumb">
+                        <img src="{% static 'puppy/img/about/pet_care.png' %}" alt="">
+                    </div>
+                </div>
+                <div class="col-lg-6 offset-lg-1 col-md-6">
+                    <div class="pet_info">
+                        <div class="section_title">
+                            <h3><span>We care your pet </span> <br>
+                                As you care</h3>
+                            <p>For more than 10 years we have been taking care of the pets of the Krasnodar Territory.
+                                The number of our clinics is growing, along with the number of lives saved.
+                                We guarantee a high level of service within the walls of our clinics.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- pet_care_area_end  -->
+
+<!-- adapt_area_start  -->
+<div class="adapt_area">
+        <div class="container">
+            <div class="row justify-content-between align-items-center">
+                <div class="col-lg-5">
+                    <div class="adapt_help">
+                        <div class="section_title">
+                            <h3><span>Our successes</span> Your peace of mind</h3>
+                            <p>Hundreds of animals receive medical care every day thanks to human donations.</p>
+                            <a href="contact.html" class="boxed-btn3">Contact Us</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="adapt_about">
+                        <div class="row align-items-center">
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single_adapt text-center">
+                                    <img src="{% static 'puppy/img/adapt_icon/1.png' %}" alt="">
+                                    <div class="adapt_content">
+                                        <h3 class="counter">112</h3>
+                                        <p>Animal needs help</p>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-6 col-md-6">
+                                <div class="single_adapt text-center">
+                                    <img src="{% static 'puppy/img/adapt_icon/3.png' %}" alt="">
+                                    <div class="adapt_content">
+                                        <h3><span class="counter">5</span>+</h3>
+                                        <p>Average age of stray animals</p>
+                                    </div>
+                                </div>
+                                <div class="single_adapt text-center">
+                                    <img src="{% static 'puppy/img/adapt_icon/2.png' %}" alt="">
+                                    <div class="adapt_content">
+                                        <h3><span class="counter">14</span>+</h3>
+                                        <p>Average age of animals available for medical care</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- adapt_area_end  -->
+
+<!-- testmonial_area_start  -->
+    <div class="testmonial_area">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="textmonial_active owl-carousel">
+                        {% for visitor in visitors %}
+                        <div class="testmonial_wrap">
+                            <div class="single_testmonial d-flex align-items-center">
+                                <div class="test_thumb">
+                                    <img src="{{ visitor.image.url }}" alt="">
+                                </div>
+                                <div class="test_content">
+                                    <h4>{{visitor.name}} {{visitor.surname}}</h4>
+                                    <span>Regular visitors</span>
+                                    <p>{{ visitor.comments }}</p>
+                                </div>
+                            </div>
+                        </div>
+                        {% endfor %}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+<!-- testmonial_area_end  -->
+
+<!-- team_area_start  -->
+    <div class="team_area">
+        <div class="container">
+            <div class="row justify-content-center ">
+                <div class="col-lg-6 col-md-10">
+                    <div class="section_title text-center mb-95">
+                        <h3>Our Team</h3>
+                        <p>Animal specialists and veterinarians that you will meet at our clinic.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                {% for teammate in teammates %}
+                <div class="col-lg-4 col-md-6">
+                    <div class="single_team">
+                        <div class="thumb">
+                            <img src="{{ teammate.image.url }}" alt="">
+                        </div>
+                        <div class="member_name text-center">
+                            <div class="mamber_inner">
+                                <h4>{{teammate.name}} {{teammate.surname}}</h4>
+                                <p>{{teammate.role}}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+<!-- team_area_start  -->
+
+<!-- team_area_start  -->
+<div class="contact_anipat anipat_bg_1">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="contact_text text-center">
+                        <div class="section_title text-center">
+                            <h3>Why go with Anipat?</h3>
+                            <p>Because we know that even the best technology is only as good as the people behind it. 24/7 tech support.</p>
+                        </div>
+                        <div class="contact_btn d-flex align-items-center justify-content-center">
+                            <a href="contact" class="boxed-btn4">Contact Us</a>
+                            <p>Or  <a href="#"> +7-918-103-33-13</a></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+</div>
+<!-- team_area_end  -->
+
+{% endblock %}
+
+
+
